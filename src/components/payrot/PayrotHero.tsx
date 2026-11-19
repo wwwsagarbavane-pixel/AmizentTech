@@ -12,14 +12,14 @@ export const PayrotHero: React.FC<PayrotHeroProps> = ({ onNavigate }) => {
     <section
       className="relative pt-20 sm:pt-24 md:pt-28 lg:pt-30 pb-0 overflow-hidden select-none"
       style={{
-        background: 'radial-gradient(ellipse 90% 60% at 50% 18%, rgba(255, 255, 255, 0.95) 0%, rgba(195, 228, 255, 0.85) 32%, rgba(115, 185, 255, 0.8) 65%, rgba(45, 135, 245, 0.95) 100%), linear-gradient(180deg, #D6EBFE 0%, #A8D4FD 22%, #60A8FA 52%, #2E7EEA 80%, #1B58A6 100%)'
+        background: 'radial-gradient(ellipse 110% 70% at 50% 0%, rgba(255, 255, 255, 0.85) 0%, rgba(215, 238, 255, 0.55) 35%, rgba(140, 198, 255, 0.35) 65%, transparent 100%), linear-gradient(180deg, #D4EBFE 0%, #A8D4FD 22%, #60A8FA 52%, #2E7EEA 80%, #1B58A6 100%)'
       }}
     >
-      {/* Ambient Glossy Blue Light Bloom */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-tr from-[#60A5FA]/40 via-[#38BDF8]/30 to-[#93C5FD]/30 blur-[90px] pointer-events-none z-0" />
+      {/* Ambient Glossy Blue Light Bloom seamlessly flowing from navbar */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-b from-white/30 via-[#60A5FA]/20 to-transparent blur-[80px] pointer-events-none z-0" />
 
       {/* 1. Giant Background Typography: AMIZENTTECH Watermark */}
-      <div className="absolute top-16 sm:top-20 md:top-22 lg:top-24 left-0 right-0 flex justify-center pointer-events-none select-none z-0 overflow-hidden">
+      <div className="absolute top-20 sm:top-24 md:top-26 lg:top-28 left-0 right-0 flex justify-center pointer-events-none select-none z-0 overflow-hidden">
         <span
           className="text-[8.5vw] sm:text-[9vw] md:text-[9.5vw] lg:text-[10vw] font-black uppercase leading-none tracking-[0.16em] md:tracking-[0.19em] transition-all duration-500 font-sans select-none"
           style={{

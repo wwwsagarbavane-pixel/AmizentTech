@@ -19,13 +19,16 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // Always start at Login Page first (never skip login page)
   const [currentUser, setCurrentUser] = useState<LmsUser | null>(() => {
-    const stored = LmsStorage.getCurrentUser();
-    if (stored) return stored;
-    if (typeof window !== 'undefined' && (window.location.hash.includes('learn') || window.location.hash.includes('dashboard') || window.location.search.includes('demo=1'))) {
-      return INITIAL_USERS[0];
-    }
-    return null;
+    try {
+      const active = sessionStorage.getItem('amizent_active_session');
+      if (active === 'true') {
+        const stored = LmsStorage.getCurrentUser();
+        if (stored) return stored;
+      }
+    } catch {}
+    return null; // Always show Login page first
   });
   const [theme, setTheme] = useState<'light' | 'dark'>(() => LmsStorage.getTheme());
 
@@ -52,6 +55,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // Default to individual learner or first matching role
       found = users[0];
     }
+
+    try {
+      sessionStorage.setItem('amizent_active_session', 'true');
+    } catch {}
 
     setCurrentUser(found);
     return true;
@@ -104,6 +111,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const logout = () => {
+    try {
+      sessionStorage.removeItem('amizent_active_session');
+      localStorage.removeItem('amizent_lms_current_user');
+    } catch {}
     setCurrentUser(null);
   };
 
