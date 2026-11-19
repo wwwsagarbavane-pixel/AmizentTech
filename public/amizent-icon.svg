@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="azGrad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#12457F" />
+      <stop offset="100%" stop-color="#1B58A6" />
+    </linearGradient>
+    <linearGradient id="azGlow" x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1B58A6" />
+      <stop offset="100%" stop-color="#8FAAC8" />
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#azGrad)" />
+  <!-- Dynamic node symbol representing learning, agent assistance and growth -->
+  <path d="M14 34L24 14L34 34" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18 27H30" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="24" cy="14" r="3.5" fill="#FFFFFF" />
+  <circle cx="14" cy="34" r="3" fill="#DCE7F2" />
+  <circle cx="34" cy="34" r="3" fill="#DCE7F2" />
+  <circle cx="24" cy="27" r="2.5" fill="#8FAAC8" />
+  <!-- Forward spark -->
+  <path d="M33 13L35 17L39 18L35 19L33 23L31 19L27 18L31 17Z" fill="#FFFFFF" opacity="0.95"/>
+</svg>
