@@ -42,11 +42,11 @@ export const PayrotHero: React.FC<PayrotHeroProps> = ({ onNavigate }) => {
 
           {/* Mobile Hero Headline & CTAs (Visible on phones & tablets < 768px) */}
           <div className="md:hidden w-full text-center pt-8 sm:pt-12 pb-4 px-4 z-20 relative space-y-3.5">
-            <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight drop-shadow-[0_2px_8px_rgba(11,27,43,0.3)]">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight drop-shadow-[0_1px_4px_rgba(18,69,127,0.20)]">
               Build In-Demand<br />
               Skills with <span className="font-extrabold text-white">Amizent Tech</span>
             </h1>
-            <p className="text-xs sm:text-sm text-white/90 font-medium max-w-xs mx-auto drop-shadow-[0_1px_4px_rgba(11,27,43,0.25)]">
+            <p className="text-xs sm:text-sm text-white/95 font-medium max-w-xs mx-auto drop-shadow-[0_1px_3px_rgba(18,69,127,0.15)]">
               Your online learning journey, made simple.
             </p>
             <div className="pt-1 flex justify-center">
@@ -62,11 +62,11 @@ export const PayrotHero: React.FC<PayrotHeroProps> = ({ onNavigate }) => {
 
           {/* Left Hero Content: Shifted down comfortably below watermark with generous breathing room (Desktop >= 768px) */}
           <div className="max-w-md lg:max-w-lg z-20 space-y-4 hidden md:block text-left pt-36 sm:pt-40 md:pt-44 lg:pt-48 xl:pt-52">
-            <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold text-white tracking-tight leading-[1.14] drop-shadow-[0_2px_10px_rgba(11,27,43,0.3)]">
+            <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold text-white tracking-tight leading-[1.14] drop-shadow-[0_1px_6px_rgba(18,69,127,0.20)]">
               Build In-Demand<br />
               Skills with <span className="font-extrabold text-white">Amizent Tech</span>
             </h1>
-            <p className="text-sm sm:text-base text-white/90 font-medium max-w-md pt-1.5 drop-shadow-[0_1px_6px_rgba(11,27,43,0.25)]">
+            <p className="text-sm sm:text-base text-white/95 font-medium max-w-md pt-1.5 drop-shadow-[0_1px_4px_rgba(18,69,127,0.15)]">
               Your online learning journey, made simple.
             </p>
             <div className="pt-2">
@@ -83,12 +83,12 @@ export const PayrotHero: React.FC<PayrotHeroProps> = ({ onNavigate }) => {
           {/* Woman on Right Side */}
           <div className="relative w-full lg:w-auto flex items-center justify-center lg:justify-end lg:pr-14 xl:pr-20">
 
-            {/* Soft Blue-White Ambient Glow behind the Woman (Matching Parrot Reference Image 1) */}
+            {/* Soft Blue-White Ambient Glow behind the Woman (Smooth, Natural Atmospheric Diffusion) */}
             <div
-              className="absolute bottom-4 right-0 lg:right-4 w-[600px] md:w-[700px] h-[360px] pointer-events-none rounded-full z-5"
+              className="absolute bottom-2 right-0 lg:right-6 w-[560px] md:w-[680px] h-[360px] pointer-events-none rounded-full z-5"
               style={{
-                background: 'radial-gradient(ellipse 70% 60% at 50% 65%, rgba(255, 255, 255, 0.50) 0%, rgba(200, 230, 255, 0.40) 35%, rgba(142, 198, 255, 0.22) 65%, transparent 100%)',
-                filter: 'blur(50px)'
+                background: 'radial-gradient(ellipse 65% 55% at 50% 60%, rgba(255, 255, 255, 0.28) 0%, rgba(210, 235, 255, 0.20) 40%, rgba(142, 198, 255, 0.10) 65%, transparent 100%)',
+                filter: 'blur(40px)'
               }}
             />
 
@@ -97,14 +97,14 @@ export const PayrotHero: React.FC<PayrotHeroProps> = ({ onNavigate }) => {
               <div 
                 className="relative w-[310px] sm:w-[370px] md:w-[420px] lg:w-[465px] xl:w-[485px] transform translate-y-0 flex items-center justify-center"
                 style={{
-                  maskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0, 0, 0, 0.95) 56%, rgba(0, 0, 0, 0.65) 66%, rgba(0, 0, 0, 0.25) 76%, rgba(0, 0, 0, 0.05) 82%, transparent 86%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 50%, rgba(0, 0, 0, 0.95) 56%, rgba(0, 0, 0, 0.65) 66%, rgba(0, 0, 0, 0.25) 76%, rgba(0, 0, 0, 0.05) 82%, transparent 86%)'
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 52%, rgba(0, 0, 0, 0.98) 60%, rgba(0, 0, 0, 0.70) 72%, rgba(0, 0, 0, 0.20) 80%, transparent 85%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 52%, rgba(0, 0, 0, 0.98) 60%, rgba(0, 0, 0, 0.70) 72%, rgba(0, 0, 0, 0.20) 80%, transparent 85%)'
                 }}
               >
                 <img
                   src="/images/hero-woman-blended.png"
                   alt="Beautiful Woman Staying Connected with Internet"
-                  className="w-full h-auto object-contain filter drop-shadow-[0_22px_45px_rgba(18,69,127,0.22)] relative z-10"
+                  className="w-full h-auto object-contain relative z-10"
                 />
               </div>
             </div>
@@ -185,7 +185,7 @@ export const PayrotHero: React.FC<PayrotHeroProps> = ({ onNavigate }) => {
             {/* Right Scoop Area: High-Contrast Crisp White Typography */}
             <div className="flex justify-end lg:pr-14 xl:pr-20 pointer-events-auto">
               <div className="w-[310px] sm:w-[370px] md:w-[420px] lg:w-[465px] xl:w-[485px] flex flex-col items-center justify-center pt-10 sm:pt-12">
-                <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-black tracking-tight uppercase leading-[1.12] text-center font-sans text-white drop-shadow-[0_4px_18px_rgba(11,27,43,0.7)]">
+                <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-black tracking-tight uppercase leading-[1.12] text-center font-sans text-white drop-shadow-[0_2px_8px_rgba(18,69,127,0.22)]">
                   BUILD SKILLS,
                   <span className="block text-white">UNLOCK FUTURE</span>
                 </h2>

@@ -81,48 +81,7 @@ export const LmsHeader: React.FC<LmsHeaderProps> = ({
       </div>
 
       {/* 2. Right Actions: Frosted Control Capsules & User Profile */}
-      <div className="flex items-center gap-3">
-        
-        {/* Interactive Role Switcher Capsule */}
-        <div className="relative">
-          <button
-            onClick={() => setRoleMenuOpen(!roleMenuOpen)}
-            className="px-4 py-2 rounded-full text-xs font-bold flex items-center gap-2 bg-white/85 backdrop-blur-2xl border border-white/90 text-[#0B1B2B] hover:bg-white shadow-[0_6px_25px_rgba(20,50,90,0.04),inset_0_1px_2px_rgba(255,255,255,0.95)] transition-all cursor-pointer"
-          >
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="capitalize">{activeRole.replace('_', ' ')}</span>
-            <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${roleMenuOpen ? 'rotate-180' : ''}`} />
-          </button>
-
-          {/* Role Dropdown Menu */}
-          {roleMenuOpen && (
-            <div className="absolute right-0 mt-2 w-72 rounded-3xl p-2.5 shadow-2xl border border-white/90 bg-white/95 backdrop-blur-2xl text-[#0B1B2B] z-50 animate-in fade-in zoom-in-95">
-              <div className="px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-slate-400 border-b border-slate-100 mb-1 flex items-center justify-between">
-                <span>Switch Portal View</span>
-                <Sparkles className="w-3 h-3 text-[#2563EB]" />
-              </div>
-              <div className="space-y-1">
-                {roles.map((r) => (
-                  <button
-                    key={r.key}
-                    onClick={() => handleRoleSelect(r.key)}
-                    className={`w-full text-left px-3.5 py-2.5 rounded-2xl flex items-center justify-between text-xs transition-colors cursor-pointer ${
-                      activeRole === r.key
-                        ? 'bg-[#EBF4FF] text-[#2563EB] font-bold'
-                        : 'hover:bg-slate-50 text-slate-700'
-                    }`}
-                  >
-                    <div>
-                      <div className="font-bold">{r.label}</div>
-                      <div className="text-[10px] text-slate-400 leading-tight mt-0.5">{r.desc}</div>
-                    </div>
-                    {activeRole === r.key && <Check className="w-4 h-4 text-[#2563EB]" />}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
+      <div className="flex items-center gap-2 sm:gap-3 shrink-0">
 
         {/* Notifications Icon Button */}
         <div className="relative">
@@ -162,10 +121,10 @@ export const LmsHeader: React.FC<LmsHeaderProps> = ({
           )}
         </div>
 
-        {/* Settings Icon Button */}
+        {/* Settings Icon Button (Desktop only, mobile has it in drawer) */}
         <button
           onClick={onOpenSettings}
-          className="w-10 h-10 rounded-full flex items-center justify-center bg-white/85 backdrop-blur-2xl border border-white/90 shadow-[0_6px_25px_rgba(20,50,90,0.04),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:bg-white text-slate-600 hover:text-[#2563EB] transition-all cursor-pointer"
+          className="hidden sm:flex w-10 h-10 rounded-full items-center justify-center bg-white/85 backdrop-blur-2xl border border-white/90 shadow-[0_6px_25px_rgba(20,50,90,0.04),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:bg-white text-slate-600 hover:text-[#2563EB] transition-all cursor-pointer"
           title="Account Settings"
         >
           <Settings className="w-4 h-4" />
@@ -174,7 +133,7 @@ export const LmsHeader: React.FC<LmsHeaderProps> = ({
         {/* User Profile Pill Capsule */}
         <div 
           onClick={onOpenProfile}
-          className="p-1.5 pr-4 rounded-full flex items-center gap-2.5 bg-white/85 backdrop-blur-2xl border border-white/90 shadow-[0_6px_25px_rgba(20,50,90,0.04),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:bg-white transition-all cursor-pointer group"
+          className="p-1.5 sm:pr-4 rounded-full flex items-center gap-2 sm:gap-2.5 bg-white/85 backdrop-blur-2xl border border-white/90 shadow-[0_6px_25px_rgba(20,50,90,0.04),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:bg-white transition-all cursor-pointer group shrink-0"
         >
           <div className="relative">
             <img
@@ -185,7 +144,7 @@ export const LmsHeader: React.FC<LmsHeaderProps> = ({
             <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-500 ring-1.5 ring-white" />
           </div>
 
-          <div className="flex flex-col text-left">
+          <div className="hidden sm:flex flex-col text-left">
             <span className="text-xs font-bold text-[#0B1B2B] leading-none">
               {currentUser?.name?.split(' ')[0] || 'User'}
             </span>
@@ -195,11 +154,11 @@ export const LmsHeader: React.FC<LmsHeaderProps> = ({
           </div>
         </div>
 
-        {/* Sign Out Button */}
+        {/* Sign Out Button (Desktop only, mobile has it in drawer) */}
         <button
           onClick={logout}
           title="Sign Out"
-          className="w-10 h-10 rounded-full flex items-center justify-center bg-white/85 backdrop-blur-2xl border border-white/90 shadow-[0_6px_25px_rgba(20,50,90,0.04)] text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-all cursor-pointer"
+          className="hidden sm:flex w-10 h-10 rounded-full items-center justify-center bg-white/85 backdrop-blur-2xl border border-white/90 shadow-[0_6px_25px_rgba(20,50,90,0.04)] text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-all cursor-pointer"
         >
           <LogOut className="w-4 h-4" />
         </button>

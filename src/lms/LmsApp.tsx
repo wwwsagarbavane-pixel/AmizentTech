@@ -29,6 +29,7 @@ import { InstructorDashboard } from './portals/instructor/InstructorDashboard';
 import { CourseCreateWizard } from './portals/instructor/CourseCreateWizard';
 import { AdminDashboard } from './portals/admin/AdminDashboard';
 import { OrgDashboard } from './portals/organization/OrgDashboard';
+import { AppLoadingSplash } from '../components/common/AppLoadingSplash';
 
 import { ShieldCheck, Check, X, LayoutGrid, Compass, GraduationCap, Video, User } from 'lucide-react';
 
@@ -85,6 +86,9 @@ const LmsAppInner: React.FC<LmsAppInnerProps> = ({ onExitLms }) => {
 
   return (
     <div className="h-screen w-screen overflow-hidden flex bg-[#F2F5FA] text-[#0B1B2B] relative select-none">
+      {/* Mobile App Splash Loading Animation */}
+      <AppLoadingSplash brandName="AMIZENT" durationMs={700} />
+
       {/* Ambient glassmorphism glowing mesh orbs */}
       <div className="fixed top-[-10%] left-[15%] w-[650px] h-[650px] rounded-full bg-blue-200/40 blur-[130px] pointer-events-none z-0" />
       <div className="fixed top-[35%] right-[-8%] w-[550px] h-[550px] rounded-full bg-sky-200/35 blur-[140px] pointer-events-none z-0" />

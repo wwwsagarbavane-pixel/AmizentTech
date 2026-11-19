@@ -13,6 +13,7 @@ import { LearningPage } from './pages/LearningPage';
 import { InsightsPage } from './pages/InsightsPage';
 import { ContactPage } from './pages/ContactPage';
 import { LmsApp } from './lms/LmsApp';
+import { AppLoadingSplash } from './components/common/AppLoadingSplash';
 
 import { ArrowUp } from 'lucide-react';
 
@@ -102,6 +103,9 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#EAF1F8] text-[#14181F] selection:bg-[#1B58A6] selection:text-white">
+      {/* Mobile & App Native Loading Splash Animation */}
+      <AppLoadingSplash brandName={brandMode} durationMs={800} />
+
       {/* Global Sticky Header Navigation */}
       <Header
         currentPage={currentPage}

@@ -1,23 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavPage } from '../../types';
-import { 
-  ArrowRight, 
-  Menu, 
-  X, 
-  Sparkles, 
-  ChevronDown, 
-  Layers, 
-  Cpu, 
-  Cloud, 
-  Shield, 
-  Terminal, 
-  Award, 
-  BarChart3, 
-  Building2, 
-  Users, 
-  BookOpen, 
-  FileText, 
-  Calendar, 
+import {
+  ArrowRight,
+  Menu,
+  X,
+  Sparkles,
+  ChevronDown,
+  Layers,
+  Cpu,
+  Cloud,
+  Shield,
+  Terminal,
+  Award,
+  BarChart3,
+  Building2,
+  Users,
+  BookOpen,
+  FileText,
+  Calendar,
   ExternalLink,
   Laptop,
   CheckCircle2,
@@ -35,11 +35,11 @@ interface HeaderProps {
   onToggleBrand?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ 
-  currentPage, 
-  onNavigate, 
+export const Header: React.FC<HeaderProps> = ({
+  currentPage,
+  onNavigate,
   brandMode = 'AMIZENT',
-  onToggleBrand 
+  onToggleBrand
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>(null);
@@ -79,58 +79,50 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || activeDropdown
-          ? 'bg-white/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(18,69,127,0.08)] py-3 sm:py-3.5 border-b border-slate-100/80' 
-          : 'bg-transparent py-4 sm:py-5 border-none'
-      }`}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-3.5 border-none ${scrolled || activeDropdown
+        ? 'bg-white/98 backdrop-blur-2xl shadow-[0_12px_40px_rgba(18,69,127,0.08)]'
+        : 'bg-[#D8E6F3]/40 backdrop-blur-xl'
+        }`}
       onMouseLeave={handleMouseLeave}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          
+
           {/* Logo on Left: Navy Emblem + Bold Text */}
-          <div 
+          <div
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-2.5 cursor-pointer select-none group"
           >
             <div className="w-8 h-8 rounded-full bg-[#0B1B2B] flex items-center justify-center text-white shadow-sm group-hover:bg-[#1E75E8] transition-colors">
               <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
               </svg>
             </div>
-            
-            <div className="flex items-center gap-1.5">
+
+            <div className="flex items-center">
               <span className="text-xl font-black tracking-tight text-[#0B1B2B] uppercase font-sans">
                 {isPayrot ? 'PAYROT' : 'AMIZENT'}
               </span>
-              {!isPayrot && (
-                <span className="text-[10px] font-black text-[#1E75E8] bg-[#EBF4FF] border border-[#CDE1F8] px-1.5 py-0.5 rounded uppercase tracking-wider">
-                  TECH
-                </span>
-              )}
             </div>
           </div>
 
           {/* Center Navigation Links: Why Pluralsight, Solutions, Learn, Resources, For individuals (Exact match to media_1794996446362_4b1efe5a.png) */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[14px] sm:text-[15px] font-medium text-[#0B1B2B]">
-            
+
             {/* 1. Why Pluralsight / Why AmIzent */}
-            <div 
+            <div
               className="relative py-2.5"
               onMouseEnter={() => handleMouseEnter('why')}
             >
-              <button 
+              <button
                 onClick={() => handleNavClick('about')}
-                className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${
-                  activeDropdown === 'why' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
-                }`}
+                className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${activeDropdown === 'why' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
+                  }`}
               >
                 <span>{firstTabLabel}</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${
-                  activeDropdown === 'why' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
-                }`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${activeDropdown === 'why' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
+                  }`} />
                 {activeDropdown === 'why' && (
                   <span className="absolute -bottom-2.5 left-0 right-0 h-[3px] bg-[#E11D48] rounded-t-sm" />
                 )}
@@ -138,20 +130,18 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* 2. Solutions */}
-            <div 
+            <div
               className="relative py-2.5"
               onMouseEnter={() => handleMouseEnter('solutions')}
             >
-              <button 
+              <button
                 onClick={() => handleNavClick('solutions')}
-                className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${
-                  activeDropdown === 'solutions' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
-                }`}
+                className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${activeDropdown === 'solutions' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
+                  }`}
               >
                 <span>Solutions</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${
-                  activeDropdown === 'solutions' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
-                }`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${activeDropdown === 'solutions' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
+                  }`} />
                 {activeDropdown === 'solutions' && (
                   <span className="absolute -bottom-2.5 left-0 right-0 h-[3px] bg-[#E11D48] rounded-t-sm" />
                 )}
@@ -159,20 +149,18 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* 3. Learn */}
-            <div 
+            <div
               className="relative py-2.5"
               onMouseEnter={() => handleMouseEnter('learn')}
             >
-              <button 
+              <button
                 onClick={() => handleNavClick('learning')}
-                className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${
-                  activeDropdown === 'learn' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
-                }`}
+                className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${activeDropdown === 'learn' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
+                  }`}
               >
                 <span>Learn</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${
-                  activeDropdown === 'learn' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
-                }`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${activeDropdown === 'learn' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
+                  }`} />
                 {activeDropdown === 'learn' && (
                   <span className="absolute -bottom-2.5 left-0 right-0 h-[3px] bg-[#E11D48] rounded-t-sm" />
                 )}
@@ -180,20 +168,18 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* 4. Resources */}
-            <div 
+            <div
               className="relative py-2.5"
               onMouseEnter={() => handleMouseEnter('resources')}
             >
-              <button 
+              <button
                 onClick={() => handleNavClick('insights')}
-                className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${
-                  activeDropdown === 'resources' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
-                }`}
+                className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${activeDropdown === 'resources' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
+                  }`}
               >
                 <span>Resources</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${
-                  activeDropdown === 'resources' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
-                }`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${activeDropdown === 'resources' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
+                  }`} />
                 {activeDropdown === 'resources' && (
                   <span className="absolute -bottom-2.5 left-0 right-0 h-[3px] bg-[#E11D48] rounded-t-sm" />
                 )}
@@ -201,20 +187,18 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* 5. For individuals */}
-            <div 
+            <div
               className="relative py-2.5"
               onMouseEnter={() => handleMouseEnter('individuals')}
             >
-              <button 
+              <button
                 onClick={() => handleNavClick('services')}
-                className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${
-                  activeDropdown === 'individuals' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
-                }`}
+                className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${activeDropdown === 'individuals' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
+                  }`}
               >
                 <span>For individuals</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${
-                  activeDropdown === 'individuals' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
-                }`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${activeDropdown === 'individuals' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
+                  }`} />
                 {activeDropdown === 'individuals' && (
                   <span className="absolute -bottom-2.5 left-0 right-0 h-[3px] bg-[#E11D48] rounded-t-sm" />
                 )}
@@ -252,27 +236,21 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           </div>
 
-          {/* Mobile Actions */}
-          <div className="flex lg:hidden items-center gap-2">
+          {/* Mobile Actions: Clean & Spacious (No cramped Demo button) */}
+          <div className="flex lg:hidden items-center gap-2.5">
             <button
               onClick={() => handleNavClick('lms')}
-              className="px-3.5 py-1.5 rounded-full bg-[#12457F] text-white text-xs font-bold shadow-sm flex items-center gap-1"
+              className="px-4 py-2 rounded-full bg-[#12457F] hover:bg-[#1E75E8] text-white text-xs font-bold shadow-xs flex items-center gap-1.5 transition-all active:scale-95 cursor-pointer"
             >
               <LogIn className="w-3.5 h-3.5" />
               <span>Log in</span>
             </button>
             <button
-              onClick={() => handleNavClick('contact')}
-              className="px-4 py-1.5 rounded-full bg-[#1E75E8] text-white text-xs font-black uppercase tracking-wider shadow-sm"
-            >
-              Demo
-            </button>
-            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-[#122443] hover:bg-white/40 transition-colors cursor-pointer"
+              className="p-2 rounded-2xl bg-white/60 hover:bg-white text-[#0B1B2B] shadow-2xs border border-slate-200/60 transition-all cursor-pointer active:scale-95"
               aria-label="Toggle Navigation"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
@@ -283,7 +261,7 @@ export const Header: React.FC<HeaderProps> = ({
       {/* MEGA DROPDOWNS (Exact match to uploaded user screenshots)                  */}
       {/* ========================================================================= */}
       {activeDropdown && (
-        <div 
+        <div
           className="hidden lg:block absolute top-full left-0 right-0 pt-2 px-4 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
           onMouseEnter={() => {
             if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
@@ -291,11 +269,11 @@ export const Header: React.FC<HeaderProps> = ({
           onMouseLeave={handleMouseLeave}
         >
           <div className="max-w-6xl mx-auto bg-white rounded-3xl p-8 shadow-[0_25px_70px_rgba(18,69,127,0.18)] border border-slate-100 ring-1 ring-black/5">
-            
+
             {/* 1. WHY AMIZENT DROPDOWN (Screenshot media_1794993831719_258d74bc.jpg) */}
             {activeDropdown === 'why' && (
               <div className="grid grid-cols-12 gap-8 text-left">
-                
+
                 {/* Column 1: Expert-led content & Skill validation */}
                 <div className="col-span-4 space-y-6 border-r border-slate-100 pr-6">
                   <div className="space-y-3">
@@ -396,14 +374,14 @@ export const Header: React.FC<HeaderProps> = ({
             {/* 2. SOLUTIONS DROPDOWN (Screenshot media_1794993831633_0fad48e3.png) */}
             {activeDropdown === 'solutions' && (
               <div className="grid grid-cols-12 gap-8 text-left">
-                
+
                 {/* Column 1: Solutions we provide (6 cols) */}
                 <div className="col-span-7 space-y-4 border-r border-slate-100 pr-8">
                   <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#E11D48] pb-1 border-b border-slate-100">
                     <Sparkles className="w-3.5 h-3.5 text-[#E11D48]" />
                     <span>Solutions we provide</span>
                   </div>
-                  
+
                   <div className="space-y-3.5">
                     {[
                       { title: 'AI Academy', desc: 'Pragmatic AI skills for business professionals' },
@@ -413,7 +391,7 @@ export const Header: React.FC<HeaderProps> = ({
                       { title: 'SAP S/4HANA Clean-Core', desc: 'Applexus-powered ERP modernization, RISE/GROW & BTP' },
                       { title: 'Instructor-led training', desc: 'Live workshops and programs for crucial initiatives' }
                     ].map((item) => (
-                      <div 
+                      <div
                         key={item.title}
                         onClick={() => handleNavClick('solutions')}
                         className="cursor-pointer group hover:bg-[#F8FBFF] p-2 rounded-xl transition-colors"
@@ -434,7 +412,7 @@ export const Header: React.FC<HeaderProps> = ({
                     <Building2 className="w-3.5 h-3.5 text-[#E11D48]" />
                     <span>Who we serve</span>
                   </div>
-                  
+
                   <div className="space-y-3">
                     {[
                       { title: 'Enterprise', desc: 'Workforce capability scaling for 1,000+ member organizations' },
@@ -443,7 +421,7 @@ export const Header: React.FC<HeaderProps> = ({
                       { title: 'Nonprofits', desc: 'Accessible digital fluency and technical enablement' },
                       { title: 'SAP & ERP Enterprises', desc: 'Clean-core digital transformation with Applexus' }
                     ].map((item) => (
-                      <div 
+                      <div
                         key={item.title}
                         onClick={() => handleNavClick('solutions')}
                         className="cursor-pointer group hover:bg-[#F8FBFF] p-2 rounded-xl transition-colors"
@@ -465,7 +443,7 @@ export const Header: React.FC<HeaderProps> = ({
                   <Terminal className="w-3.5 h-3.5 text-[#E11D48]" />
                   <span>Learn</span>
                 </div>
-                
+
                 <div className="space-y-1">
                   {[
                     'Artificial intelligence',
@@ -477,7 +455,7 @@ export const Header: React.FC<HeaderProps> = ({
                     'SAP S/4HANA & Clean-Core Cloud',
                     'Business & professional development'
                   ].map((topic) => (
-                    <div 
+                    <div
                       key={topic}
                       onClick={() => handleNavClick('learning')}
                       className="px-3 py-2 rounded-xl text-xs font-black text-[#122443] hover:text-[#1E75E8] hover:bg-[#F0F6FD] cursor-pointer transition-colors"
@@ -488,7 +466,7 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
 
                 <div className="pt-2 border-t border-slate-100">
-                  <button 
+                  <button
                     onClick={() => handleNavClick('learning')}
                     className="text-xs font-black text-[#E11D48] hover:text-[#BE123C] flex items-center gap-1.5 cursor-pointer uppercase tracking-wider"
                   >
@@ -502,7 +480,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* 4. RESOURCES DROPDOWN (Screenshot media_1794993831704_7e6bb81a.jpg) */}
             {activeDropdown === 'resources' && (
               <div className="grid grid-cols-12 gap-8 text-left">
-                
+
                 {/* Column 1: Learn */}
                 <div className="col-span-3 space-y-3 border-r border-slate-100 pr-4">
                   <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#E11D48] pb-1 border-b border-slate-100">
@@ -562,7 +540,7 @@ export const Header: React.FC<HeaderProps> = ({
                     <p className="text-[11px] text-[#5A7394] leading-relaxed">
                       1,500+ tech insiders share what's shifting fastest in enterprise IT.
                     </p>
-                    <button 
+                    <button
                       onClick={() => handleNavClick('insights')}
                       className="text-xs font-black text-[#E11D48] flex items-center gap-1 hover:underline cursor-pointer"
                     >
@@ -578,7 +556,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* 5. FOR INDIVIDUALS DROPDOWN (Screenshot media_1794993831601_87376f31.png) */}
             {activeDropdown === 'individuals' && (
               <div className="max-w-2xl mx-auto grid grid-cols-2 gap-8 text-left">
-                
+
                 {/* Column 1: Individuals */}
                 <div className="space-y-4 border-r border-slate-100 pr-6">
                   <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#E11D48] pb-1 border-b border-slate-100">
@@ -623,10 +601,10 @@ export const Header: React.FC<HeaderProps> = ({
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white/98 backdrop-blur-2xl border-t border-slate-100 shadow-2xl py-6 px-6 max-h-[85vh] overflow-y-auto animate-in slide-in-from-top-4">
           <div className="space-y-4 text-left">
-            
+
             {/* 1. Why AmIzent */}
             <div className="border-b border-slate-100 pb-3">
-              <div 
+              <div
                 onClick={() => setMobileExpandedSection(mobileExpandedSection === 'why' ? null : 'why')}
                 className="flex items-center justify-between text-sm font-black text-[#122443] cursor-pointer py-1"
               >
@@ -645,7 +623,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* 2. Solutions */}
             <div className="border-b border-slate-100 pb-3">
-              <div 
+              <div
                 onClick={() => setMobileExpandedSection(mobileExpandedSection === 'solutions' ? null : 'solutions')}
                 className="flex items-center justify-between text-sm font-black text-[#122443] cursor-pointer py-1"
               >
@@ -664,7 +642,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* 3. Learn */}
             <div className="border-b border-slate-100 pb-3">
-              <div 
+              <div
                 onClick={() => setMobileExpandedSection(mobileExpandedSection === 'learn' ? null : 'learn')}
                 className="flex items-center justify-between text-sm font-black text-[#122443] cursor-pointer py-1"
               >
@@ -683,7 +661,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* 4. Resources */}
             <div className="border-b border-slate-100 pb-3">
-              <div 
+              <div
                 onClick={() => setMobileExpandedSection(mobileExpandedSection === 'resources' ? null : 'resources')}
                 className="flex items-center justify-between text-sm font-black text-[#122443] cursor-pointer py-1"
               >
@@ -701,7 +679,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* 5. For Individuals */}
             <div className="border-b border-slate-100 pb-3">
-              <div 
+              <div
                 onClick={() => handleNavClick('services')}
                 className="flex items-center justify-between text-sm font-black text-[#122443] cursor-pointer py-1"
               >
