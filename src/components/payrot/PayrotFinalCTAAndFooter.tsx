@@ -14,6 +14,16 @@ export const PayrotFinalCTAAndFooter: React.FC<PayrotFinalCTAAndFooterProps> = (
     <footer className="bg-[#0B2B50] text-white py-16 relative overflow-hidden z-10 border-t border-[#12457F] select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Brand Logo Row */}
+        <div className="flex items-center justify-between pb-8">
+          <img
+            src="/amizent-logo-white.png"
+            alt="AmIzent Tech Services"
+            className="h-9 sm:h-10 w-auto object-contain cursor-pointer opacity-90 hover:opacity-100 transition-opacity"
+            onClick={() => onNavigate('home')}
+          />
+        </div>
+
         {/* Top Footer Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-12 border-b border-white/10 text-xs text-[#8FAAC8]">
           {/* Left Copyright */}

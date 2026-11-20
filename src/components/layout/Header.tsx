@@ -80,31 +80,25 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-3.5 border-none ${scrolled || activeDropdown
-        ? 'bg-white/98 backdrop-blur-2xl shadow-[0_12px_40px_rgba(18,69,127,0.08)]'
-        : 'bg-[#D8E6F3]/40 backdrop-blur-xl'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2.5 sm:py-3.5 border-none ${scrolled || activeDropdown
+        ? 'bg-white/95 backdrop-blur-2xl shadow-[0_4px_25px_rgba(18,69,127,0.08)]'
+        : 'bg-transparent'
         }`}
       onMouseLeave={handleMouseLeave}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
 
-          {/* Logo on Left: Navy Emblem + Bold Text */}
+          {/* Logo on Left: Exact AmIzent Tech Services Logo */}
           <div
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-2.5 cursor-pointer select-none group"
+            className="flex items-center cursor-pointer select-none group py-1"
           >
-            <div className="w-8 h-8 rounded-full bg-[#0B1B2B] flex items-center justify-center text-white shadow-sm group-hover:bg-[#1E75E8] transition-colors">
-              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
-              </svg>
-            </div>
-
-            <div className="flex items-center">
-              <span className="text-xl font-black tracking-tight text-[#0B1B2B] uppercase font-sans">
-                {isPayrot ? 'PAYROT' : 'AMIZENT'}
-              </span>
-            </div>
+            <img
+              src="/amizent-logo.png"
+              alt="AmIzent Tech Services"
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+            />
           </div>
 
           {/* Center Navigation Links: Why Pluralsight, Solutions, Learn, Resources, For individuals (Exact match to media_1794996446362_4b1efe5a.png) */}
@@ -196,7 +190,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className={`flex items-center gap-1.5 transition-colors cursor-pointer py-1 relative font-medium ${activeDropdown === 'individuals' ? 'text-[#0B1B2B] font-semibold' : 'text-[#0B1B2B] hover:text-[#E11D48]'
                   }`}
               >
-                <span>For individuals</span>
+                <span>For Learners</span>
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 stroke-[2.5] ${activeDropdown === 'individuals' ? 'rotate-180 text-[#0B1B2B]' : 'text-[#0B1B2B]/75'
                   }`} />
                 {activeDropdown === 'individuals' && (
@@ -683,7 +677,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => handleNavClick('services')}
                 className="flex items-center justify-between text-sm font-black text-[#122443] cursor-pointer py-1"
               >
-                <span>For individuals</span>
+                <span>For Learners</span>
                 <ArrowRight className="w-4 h-4 text-slate-400" />
               </div>
             </div>

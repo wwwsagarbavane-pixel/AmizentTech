@@ -100,47 +100,20 @@ export const LoginPage: React.FC<LoginProps> = ({
       {/* 2. Top Navigation Bar */}
       <header className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 pt-7 pb-2 flex items-center justify-between">
         
-        {/* Left: AmIzent LMS Official Logo (Exact Monogram + LMS Subtitle) */}
+        {/* Left: AmIzent LMS Official Logo */}
         <button 
           onClick={onExitLms}
           title="Return to Public Website"
-          className="flex items-center gap-3 text-left group cursor-pointer"
+          className="flex items-center gap-2.5 text-left group cursor-pointer"
         >
-          {/* Stylized Modern "A" Monogram */}
-          <div className="w-10 h-10 relative flex items-center justify-center">
-            <svg className="w-10 h-10" viewBox="0 0 44 44" fill="none">
-              {/* Left navy pillar */}
-              <path 
-                d="M10 36L18 8H23L15 36H10Z" 
-                fill="#0B2B6B" 
-              />
-              {/* Right dynamic curved cyan/blue swoosh */}
-              <path 
-                d="M20 8H26L36 36H30L26.5 25H16L18 19H28.5L24 8Z" 
-                fill="url(#logoSwooshGrad)" 
-              />
-              <defs>
-                <linearGradient id="logoSwooshGrad" x1="16" y1="8" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#2563EB" />
-                  <stop offset="1" stopColor="#0284C7" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-
-          {/* Typography */}
-          <div className="flex flex-col">
-            <span className="text-xl sm:text-2xl font-black tracking-tight text-[#0B1B2B] leading-none">
-              AmIzent
-            </span>
-            <div className="flex items-center gap-1.5 mt-1">
-              <span className="w-3.5 h-[1.5px] bg-[#2563EB]/40 rounded-full" />
-              <span className="text-[10px] font-extrabold tracking-[0.22em] text-[#2563EB] uppercase leading-none">
-                LMS
-              </span>
-              <span className="w-3.5 h-[1.5px] bg-[#2563EB]/40 rounded-full" />
-            </div>
-          </div>
+          <img
+            src="/amizent-logo.png"
+            alt="AmIzent Tech Services"
+            className="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+          />
+          <span className="px-2 py-0.5 rounded-full bg-[#EBF4FF] text-[#2563EB] text-[10px] font-black tracking-wide uppercase">
+            LMS
+          </span>
         </button>
 
         {/* Right: Sign Up prompt link */}

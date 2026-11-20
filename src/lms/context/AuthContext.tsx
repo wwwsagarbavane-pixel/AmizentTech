@@ -20,16 +20,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Always start at Login Page first (never skip login page)
-  const [currentUser, setCurrentUser] = useState<LmsUser | null>(() => {
-    try {
-      const active = sessionStorage.getItem('amizent_active_session');
-      if (active === 'true') {
-        const stored = LmsStorage.getCurrentUser();
-        if (stored) return stored;
-      }
-    } catch {}
-    return null; // Always show Login page first
-  });
+  const [currentUser, setCurrentUser] = useState<LmsUser | null>(null);
   const [theme, setTheme] = useState<'light' | 'dark'>(() => LmsStorage.getTheme());
 
   useEffect(() => {

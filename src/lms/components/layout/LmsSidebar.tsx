@@ -171,31 +171,20 @@ export const LmsSidebar: React.FC<LmsSidebarProps> = ({
               className={`flex items-center gap-3 cursor-pointer group ${isCollapsed && !mobileOpen ? 'justify-center px-0' : 'px-1'
                 }`}
             >
-              {/* Glowing Dark Blue Squircle with Sparkle Monogram */}
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-[#142A50] to-[#0A162C] flex items-center justify-center shadow-[0_6px_16px_rgba(10,22,44,0.28)] relative overflow-hidden shrink-0 group-hover:scale-105 transition-transform">
-                {/* Ambient soft glow */}
-                <div className="absolute inset-0 bg-blue-500/10 rounded-2xl" />
-
-                {/* White ring around sparkle */}
-                <div className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center">
-                  {/* 4-point diamond star / sparkle */}
-                  <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z" />
-                  </svg>
-                </div>
+              {/* Official AmIzent Icon */}
+              <div className="w-11 h-11 rounded-2xl bg-white shadow-xs border border-slate-200/60 flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition-transform p-1.5">
+                <img src="/amizent-icon.png" alt="AmIzent" className="w-full h-full object-contain" />
               </div>
 
-              {!isCollapsed && (
+              {(!isCollapsed || mobileOpen) && (
                 <div className="flex flex-col">
-                  <div className="flex items-center gap-2">
-                    <span className="text-base font-black tracking-wider text-[#0B1B2B]">
-                      AMIZENT
-                    </span>
-                    <span className="px-2 py-0.5 rounded-full bg-[#EBF4FF] text-[#2563EB] text-[10px] font-black tracking-wide leading-none">
+                  <div className="flex items-center gap-1.5">
+                    <img src="/amizent-logo.png" alt="AmIzent" className="h-6 w-auto object-contain" />
+                    <span className="px-1.5 py-0.5 rounded-full bg-[#EBF4FF] text-[#2563EB] text-[9px] font-black tracking-wide leading-none">
                       LMS
                     </span>
                   </div>
-                  <span className="text-[9px] font-bold tracking-[0.18em] text-[#94A3B8] uppercase mt-0.5">
+                  <span className="text-[8.5px] font-bold tracking-[0.16em] text-[#94A3B8] uppercase mt-1">
                     ENTERPRISE PORTAL
                   </span>
                 </div>

@@ -286,7 +286,7 @@ export const AILearningMockup: React.FC = () => {
           </div>
           <div className="p-5 rounded-2xl bg-[#F8FBFF] border border-[#C8D7E8]">
             <div className="text-sm font-extrabold text-[#12457F] mb-1">Adaptive Pathways</div>
-            <p className="text-xs text-[#4A607A]">Dynamic curriculum adjustment based on individual learner checkpoint performance.</p>
+            <p className="text-xs text-[#4A607A]">Dynamic curriculum adjustment based on student checkpoint performance.</p>
           </div>
         </div>
 

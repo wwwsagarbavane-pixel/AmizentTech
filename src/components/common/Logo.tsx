@@ -9,14 +9,16 @@ interface LogoProps {
 export const Logo: React.FC<LogoProps> = ({ className = '', variant = 'navbar', onClick }) => {
   // Exact client dimensions & sizing with strict proportions and transparent background
   const dimensions = {
-    navbar: 'h-10 w-auto max-w-[210px]',
-    footer: 'h-11 w-auto max-w-[230px]',
-    large: 'h-14 w-auto max-w-[280px]',
+    navbar: 'h-8 sm:h-9 md:h-10 w-auto',
+    footer: 'h-9 sm:h-10 md:h-11 w-auto',
+    large: 'h-11 sm:h-13 md:h-14 w-auto',
   }[variant];
+
+  const logoSrc = variant === 'footer' ? '/amizent-logo-white.png' : '/amizent-logo.png';
 
   return (
     <div 
-      className={`inline-flex items-center gap-3 cursor-pointer select-none group transition-transform duration-200 active:scale-[0.98] ${className}`}
+      className={`inline-flex items-center cursor-pointer select-none group transition-transform duration-200 active:scale-[0.98] ${className}`}
       onClick={onClick}
       role="button"
       tabIndex={0}
@@ -29,8 +31,8 @@ export const Logo: React.FC<LogoProps> = ({ className = '', variant = 'navbar', 
       }}
     >
       <img
-        src="/amizent-logo.svg"
-        alt="AmIzent Tech Services - Your Friendly Agent to Upskill"
+        src={logoSrc}
+        alt="AmIzent Tech Services"
         className={`${dimensions} object-contain transition-opacity duration-200 group-hover:opacity-95`}
         loading="eager"
       />

@@ -144,7 +144,7 @@ export const AdminDashboard: React.FC = () => {
               }`}
             >
               <option value="all">All Roles</option>
-              <option value="individual_learner">Individual Learner</option>
+              <option value="individual_learner">Learner</option>
               <option value="corporate_learner">Corporate Learner</option>
               <option value="instructor">Instructor</option>
               <option value="org_admin">Org Admin</option>
@@ -260,7 +260,7 @@ export const AdminDashboard: React.FC = () => {
                   onChange={(e) => setNewUserRole(e.target.value as LmsRole)}
                   className="w-full p-2.5 rounded-xl border text-xs outline-none bg-slate-50 dark:bg-white/5 border-slate-200 dark:border-white/10"
                 >
-                  <option value="individual_learner">Individual Learner</option>
+                  <option value="individual_learner">Learner</option>
                   <option value="corporate_learner">Corporate Learner</option>
                   <option value="instructor">Lead Instructor</option>
                   <option value="org_admin">Organization Admin</option>

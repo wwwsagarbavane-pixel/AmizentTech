@@ -45,9 +45,12 @@ export const RegisterIndividualPage: React.FC<RegisterProps> = ({
           <span>Back to Sign In</span>
         </button>
 
-        <span className="font-mono text-xs font-bold text-[#1E75E8]">
-          INDIVIDUAL LEARNER ENROLLMENT
-        </span>
+        <div className="flex items-center gap-3">
+          <img src="/amizent-logo.png" alt="AmIzent" className="h-7 w-auto object-contain" />
+          <span className="font-mono text-xs font-bold text-[#1E75E8]">
+            STUDENT ENROLLMENT
+          </span>
+        </div>
       </div>
 
       {/* Main Registration Card */}

@@ -290,7 +290,7 @@ const LmsAppInner: React.FC<LmsAppInnerProps> = ({ onExitLms }) => {
 
             <div className="space-y-2">
               {[
-                { role: 'individual_learner' as LmsRole, title: '1. Individual Learner', desc: 'Bento Grid, Skill IQ Pass, Courses, Video Player' },
+                { role: 'individual_learner' as LmsRole, title: '1. Learner Portal', desc: 'Bento Grid, Skill IQ Pass, Courses, Video Player' },
                 { role: 'corporate_learner' as LmsRole, title: '2. Corporate Learner', desc: 'Enterprise Paths, Cohort Leaderboards, Badges' },
                 { role: 'instructor' as LmsRole, title: '3. Lead Instructor', desc: 'Course Studio, Lesson Creator, Grading' },
                 { role: 'org_admin' as LmsRole, title: '4. Organization Admin', desc: 'Seat Management, Team Skill Gap Analysis' },

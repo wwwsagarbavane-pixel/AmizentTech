@@ -36,7 +36,7 @@ export const LmsHeader: React.FC<LmsHeaderProps> = ({
   const unreadCount = notifications.filter(n => !n.isRead).length;
 
   const roles: { key: LmsRole; label: string; desc: string }[] = [
-    { key: 'individual_learner', label: 'Individual Learner', desc: 'Catalog, Courses, Player, Skill IQ' },
+    { key: 'individual_learner', label: 'Learner Portal', desc: 'Catalog, Courses, Player, Skill IQ' },
     { key: 'corporate_learner', label: 'Corporate Learner', desc: 'Company Tracks, Leaderboard, Badges' },
     { key: 'instructor', label: 'Lead Instructor', desc: 'Studio, Lesson Uploads, Live Classes, Grading' },
     { key: 'org_admin', label: 'Organization Admin', desc: 'Team Seats, Bulk Import, Training Assignment' },
